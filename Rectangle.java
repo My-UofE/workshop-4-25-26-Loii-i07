@@ -1,16 +1,15 @@
 // A Rectangle class
 public class Rectangle {
-  
-  // 4 instance attributes
-  double width;
-    double height;
-    double originX;
-    double originY;
+    // 1. Private fields - Hidden from the outside world
+    private double width;
+    private double height;
+    private double originX;
+    private double originY;
 
     //constructor.
   public Rectangle(double width, double height, double originX, double originY){
-    this.width = width;
-    this.height = height;
+    this.setWidth(width);
+    this.setHeight(height);
     this.originX = originX;
     this.originY = originY;
   }
@@ -28,6 +27,31 @@ public Rectangle(){
 
   // 1 static attributes
   public static final int NUMBER_OF_SIDES = 4;
+
+  public double getWidth() { 
+    return width; 
+    }
+
+  public double getHeight() { 
+    return height; 
+    }
+
+  public double getOriginX() { 
+    return originX;
+     }
+
+  public double getOriginY() { 
+    return originY;
+     }
+
+  public void setWidth(double width){
+    this.width = width;
+  } 
+
+  public void setHeight(double height){
+    this.height = height;
+  }  
+
 
   // main constructor
   //public Rectangle(double w, double h, double oX, double oY) {
