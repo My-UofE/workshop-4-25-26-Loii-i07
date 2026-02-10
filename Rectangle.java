@@ -110,4 +110,9 @@ public Rectangle(){
   public boolean isSquare() {
     return Math.abs(this.width - this.height) < 0.000001;
   }
+
+  public String toString(){
+    return "Rectangle[x="+originX+",y="+originY+",w="+width+",h="+height+"]";
+  }
+
 }
