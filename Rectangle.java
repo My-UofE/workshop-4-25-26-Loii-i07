@@ -53,4 +53,37 @@ public Rectangle(){
     return 2 * (width + height);
   }
   
+  public void scale(double scaleX,  double scaleY) {
+    this.width *= scaleX;
+    this.height *= scaleY;
+  }
+
+  public void scale(double factor) {
+    this.scale(factor, factor);
+  }
+
+  public boolean isOverlappedWith(Rectangle r) {
+    //checks if rrectangle is left or right of rectangle r
+    if (this.originX  + this.width < r.originX || r.originX + r.width < this.originX){
+      return false;
+    }
+
+    //checks if rectangle is below or above rectangle r
+    if(this.originY  + this.height < r.originY || r.originY + r.height < this.originY){
+      return false;
+  }
+//if none of the aboove is true they must  be overlapping
+  return true;
+  }
+
+  public double calcRatio(){
+    if (this.height == 0){
+      return 0;
+    }
+    return this.width / this.height;
+  }
+
+  public boolean isSquare() {
+    return Math.abs(this.width - this.height) < 0.000001;
+  }
 }
